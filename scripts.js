@@ -28,6 +28,14 @@ function checkInputs() {
     } else {
         setSuccessFor(email);
     };
+
+    if(passwordValue === "") {
+        setErrorFor(password, 'A senha é obrigatória.');
+    } else if(passwordValue.length < 7) {
+        setErrorFor(password, 'A senha precisa ter no mínimo 7 caracteres.'); 
+    } else {
+        setSuccessFor(password);
+    }
 };
 
 function setErrorFor(input, message) {
