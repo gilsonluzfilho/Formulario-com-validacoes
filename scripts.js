@@ -36,6 +36,14 @@ function checkInputs() {
     } else {
         setSuccessFor(password);
     }
+
+    if(passwordConfirmationValue === "") {
+        setErrorFor(passwordConfirmation, 'A confirmação de senha é obrigatória.');
+    } else if (passwordConfirmationValue !== passwordValue) {
+        setErrorFor(passwordConfirmation, "As senhas não conferem.");
+    } else {
+        setSuccessFor(passwordConfirmation);
+    };
 };
 
 function setErrorFor(input, message) {
